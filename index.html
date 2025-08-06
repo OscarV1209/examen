@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Crud Registro de Alumno</title>
+</head>
+
+ <!-- Firebase App ( Firebase SDK) -->
+ <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+ <!-- Firebase Firestore -->
+ <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+ <!--Configuracion de Firebase dada por el mismo-->
+ <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyBjCl0hh2ndu4ktizqudQ6-9nW9GrWnfq8",
+    authDomain: "alumnos-90cd2.firebaseapp.com",
+    projectId: "alumnos-90cd2",
+    storageBucket: "alumnos-90cd2.firebasestorage.app",
+    messagingSenderId: "416856177477",
+    appId: "1:416856177477:web:a56dca7ec9bb9504965c2c",
+    measurementId: "G-K04PG00TH2"
+  };
+
+    //instancia de base de datos
+     firebase.initializeApp(firebaseConfig);
+     const db = firebase.firestore();
+
+ </script>
+<body>
+    <video autoplay muted loop id="video">
+        <source src="assets/img/15157535-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        
+      </video>
+
+    <div class="crud-container">
+        <h1>Ingrese nuevo alumno</h1>
+
+        <form id="crud-form">
+     <label for="name"><i class="fas fa-user"></i> Nombre:</label>
+    <input type="text" id="name" name="name" placeholder="Ingresa tu Nombre">
+
+      <label for="age"><i class="fas fa-calendar-alt"></i> Edad:</label>
+      <input type="text" id="age" name="age" placeholder="Ingresa tu Edad">
+
+       <label for="grade"><i class="fas fa-school"></i> Curso/Grado:</label>
+     <input type="text" id="grade" name="grade" placeholder="Ingresa tu Curso/Grado">
+
+     <label for="section"><i class="fas fa-layer-group"></i> Sección:</label>
+      <input type="text" id="section" name="section" placeholder="Ingresa la Sección">
+
+   <label for="email"><i class="fas fa-envelope"></i> Correo/Email:</label>
+    <input type="text" id="email" name="email" placeholder="Ingresa tu correo/email">
+
+<label for="average"><i class="fas fa-chart-line"></i> Promedio:</label>
+<input type="text" id="average" name="average" placeholder="Ingresa tu promedio">
+
+
+        <button style="background-color: green;" type="submit">Guardar <i class="fas fa-save"></i></button>
+        <button id="cancel" style="background-color: rgb(255, 0, 13);" type="button"><i class="fas fa-cancel"></i>Cancelar</button>
+        
+        </form>
+
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Curso/grado</th>
+                    <th>Seccion</th>
+                    <th>Correo/Email</th>
+                    <th>Promedio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="table-data-alumno">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
